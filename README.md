@@ -1,3 +1,5 @@
+![LinkerBot SDK banner](.github/banner.png)
+
 # LinkerBot SDKs
 
 SDKs, communication libraries, and teleoperation tools for LinkerBot hands and arms.
