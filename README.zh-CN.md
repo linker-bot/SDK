@@ -9,7 +9,7 @@ LinkerBot 灵巧手、机械臂的 SDK、通信库与遥操作工具入口。
 
 - **灵巧手控制：**选择 C++ 或 Python 灵巧手 SDK；需要 ROS 话题和服务时，选择灵巧手 ROS 2 SDK。
 - **机械臂控制：**选择机械臂 Python SDK 或机械臂 ROS 2 SDK。
-- **遥操作：**数据手套到灵巧手的动作映射使用 `linkerhand-telop-ros2`；双臂输入设备的关节读取使用 `linkerhand-tele-arm`。
+- **遥操作：**数据手套到灵巧手的动作映射使用 `linkerhand-telop-ros2`；双臂输入设备的关节读取使用 `linkerbot-teleop-arm`。
 - **通信接入：**只需要底层通信、不需要设备控制接口时，选择 C++ 或 Python 通信库。
 - **已有应用：**更换 SDK 前，先阅读旧版本项目说明。
 
@@ -26,7 +26,8 @@ LinkerBot 灵巧手、机械臂的 SDK、通信库与遥操作工具入口。
 ### C++ SDK 与工具
 
 - [**linkerbot-hand-cpp-sdk**](https://github.com/linker-bot/linkerbot-hand-cpp-sdk) — C++17 灵巧手 SDK，基于 `linkerbot-transport-cpp` 提供设备发现、关节控制、传感器读取和后台遥测。选用硬件前，请查阅型号能力与兼容性文档。
-- [**linkerhand-tele-arm**](https://github.com/linker-bot/linkerhand-tele-arm) — 通过 Linux SocketCAN 读取双臂输入设备的 14 个关节，提供 C++17 核心库、命令行工具和 ROS 2 节点。该项目用于读取输入设备，不是机械臂运动控制 SDK。
+- [**linkerbot-hand-tools**](https://github.com/linker-bot/linkerbot-hand-tools) — 两代 C++ 灵巧手 SDK 共用的 CLI/TUI 与 Web 工具，提供离线模拟、遥测和触觉/掌部数据可视化。操作硬件需要对应 SDK 与适配器运行库。
+- [**linkerbot-teleop-arm**](https://github.com/linker-bot/linkerbot-teleop-arm) — 通过 Linux SocketCAN 读取双臂输入设备的 14 个关节，提供 C++17 核心库、命令行工具和 ROS 2 节点。该项目用于读取输入设备，不是机械臂运动控制 SDK。
 
 ### Python 与 ROS 2 SDK
 
@@ -41,7 +42,7 @@ LinkerBot 灵巧手、机械臂的 SDK、通信库与遥操作工具入口。
 以下项目保留用于已有应用。新项目在硬件与功能受支持的前提下，应优先选择正在维护的项目。
 本目录未指定停止维护日期。下文提到的新项目仅作为迁移评估入口，不表示可以直接替换，也不保证覆盖旧型号。
 
-- [**linkerbot-hand-legacy-cpp-sdk**](https://github.com/linker-bot/linkerbot-hand-legacy-cpp-sdk) — 旧版预编译 C++ 灵巧手 SDK，包含公开头文件、预编译库、示例和工具。其 README 仍说明会为新 SDK 尚未覆盖的设备提供兼容维护。迁移至 `linkerbot-hand-cpp-sdk` 前需逐型号核对。
+- [**linkerbot-hand-legacy-cpp-sdk**](https://github.com/linker-bot/linkerbot-hand-legacy-cpp-sdk) — 旧版预编译 C++ 灵巧手 SDK，包含公开头文件、预编译库、回调适配层和一个只读集成示例。交互工具已迁移至 [linkerbot-hand-tools](https://github.com/linker-bot/linkerbot-hand-tools)。CMake 包名为 `linkerhand-legacy-cpp-sdk`，目标为 `LinkerHand::linkerhand_legacy_cpp_sdk`，预编译库文件名保持不变。兼容维护覆盖 L7、G20（L20_10/L20_11）、L21、L25 和 O20。迁移至 `linkerbot-hand-cpp-sdk` 前需逐型号核对。
 - [**linkerbot-python-sdk**](https://github.com/linker-bot/linkerbot-python-sdk) — 较早的 Python 综合 SDK，包含灵巧手和机械臂功能。新接入可评估拆分后的灵巧手 Python SDK、机械臂 Python SDK 与通信库。
 - [**linkerhand-python-sdk**](https://github.com/linker-bot/linkerhand-python-sdk) — 较早的 Python 灵巧手 SDK，提供 CAN/Modbus 配置与控制示例。可评估 `linkerbot-hand-python-sdk`，先确认设备与协议支持情况。
 - [**linkerhand-ros2-sdk**](https://github.com/linker-bot/linkerhand-ros2-sdk) — 较早的 ROS 2 灵巧手驱动，包含控制示例、GUI 工具与触觉可视化。可评估 `linkerbot-hand-ros2-sdk`，核对消息、启动配置和型号差异。
@@ -50,7 +51,7 @@ LinkerBot 灵巧手、机械臂的 SDK、通信库与遥操作工具入口。
 - [**linkerhand-o20-ros2**](https://github.com/linker-bot/linkerhand-o20-ros2) — O20 专用 ROS 2 驱动与 GUI 示例，使用 CAN FD 通信。需单独确认 O20 支持情况，不能由 O30 支持情况推定兼容。
 - [**linkerhand-l20d-ros2**](https://github.com/linker-bot/linkerhand-l20d-ros2) — L20D 专用 ROS 2 驱动，包含 GUI、手部状态话题与触觉数据。需明确核对 L20D 支持情况，不能仅凭 L20 等相似型号名称判断兼容。
 - [**linkerhand-cpp-ros2**](https://github.com/linker-bot/linkerhand-cpp-ros2) — 旧版 C++ 灵巧手 SDK 的 ROS 2 封装，包含启动配置与 GUI 工具。替换前需评估正在维护的灵巧手 ROS 2 SDK 的接口与型号覆盖情况。
-- **linkerhand-ros-teleop** — 本目录提供的旧版遥操作项目入口。[原仓库地址](https://github.com/linker-bot/linkerhand-ros-teleop)在 2026-11-06 检查时返回 404，无法核实内容与兼容性。当前 ROS 2 遥操作需求可评估 `linkerhand-telop-ros2`。
+- [**linkerhand-ros-teleop**](https://github.com/linker-bot/linkerhand-ros-teleop) — 旧版手套动作重定向项目，包含 ROS 1、ROS 2 节点和离线 Python 核心 wheel 包。README 说明通过 UDP 接收手套软件数据。当前 ROS 2 遥操作需求可评估 `linkerhand-telop-ros2`，需核对型号与接口兼容性。
 
 替换已有 SDK 前，请阅读[旧版迁移评估指南](MIGRATION.zh-CN.md)。
 
