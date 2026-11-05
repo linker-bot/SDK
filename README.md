@@ -55,6 +55,8 @@ drop-in replacement or a guarantee of model coverage.
 - [**linkerhand-cpp-ros2**](https://github.com/linker-bot/linkerhand-cpp-ros2) — ROS 2 wrapper around the legacy C++ hand SDK, with launch configuration and GUI tools. Evaluate the maintained Hand ROS 2 SDK's interfaces and model coverage before replacing it.
 - **linkerhand-ros-teleop** — Legacy teleoperation entry supplied for this directory. The [supplied repository URL](https://github.com/linker-bot/linkerhand-ros-teleop) returned 404 when checked on 2026-11-06; its contents and compatibility could not be verified. Evaluate `linkerhand-telop-ros2` for current ROS 2 teleoperation needs.
 
+Read the [legacy migration guide](MIGRATION.md) before replacing an existing SDK.
+
 ## Documentation and license
 
 Each linked repository is the source for its own installation, API, hardware limits,

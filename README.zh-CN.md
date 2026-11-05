@@ -52,6 +52,8 @@ LinkerBot 灵巧手、机械臂的 SDK、通信库与遥操作工具入口。
 - [**linkerhand-cpp-ros2**](https://github.com/linker-bot/linkerhand-cpp-ros2) — 旧版 C++ 灵巧手 SDK 的 ROS 2 封装，包含启动配置与 GUI 工具。替换前需评估正在维护的灵巧手 ROS 2 SDK 的接口与型号覆盖情况。
 - **linkerhand-ros-teleop** — 本目录提供的旧版遥操作项目入口。[原仓库地址](https://github.com/linker-bot/linkerhand-ros-teleop)在 2026-11-06 检查时返回 404，无法核实内容与兼容性。当前 ROS 2 遥操作需求可评估 `linkerhand-telop-ros2`。
 
+替换已有 SDK 前，请阅读[旧版迁移评估指南](MIGRATION.zh-CN.md)。
+
 ## 文档与许可证
 
 安装步骤、API、硬件限制和发布信息以各项目仓库为准。本目录不分发 SDK 或驱动。
