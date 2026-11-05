@@ -11,7 +11,9 @@ is ending. It does not specify a retirement date or promise API compatibility be
 - Legacy Python hand applications: evaluate [linkerbot-hand-python-sdk](https://github.com/linker-bot/linkerbot-hand-python-sdk).
 - Applications using the combined `linkerbot-python-sdk`: evaluate the separate [hand](https://github.com/linker-bot/linkerbot-hand-python-sdk), [arm](https://github.com/linker-bot/linkerbot-arm-python-sdk), and [transport](https://github.com/linker-bot/linkerbot-transport) projects according to the components actually used.
 - Legacy hand ROS applications, including model-specific and C++ wrappers: evaluate [linkerbot-hand-ros2-sdk](https://github.com/linker-bot/linkerbot-hand-ros2-sdk). ROS 1 applications also require a ROS 2 migration; a Python-based ROS 2 driver is not a replacement C++ library.
-- Legacy teleoperation applications: evaluate [linkerhand-telop-ros2](https://github.com/linker-bot/linkerhand-telop-ros2). The old `linkerhand-ros-teleop` URL could not be verified; no equivalence is asserted.
+- Legacy teleoperation applications: evaluate [linkerhand-telop-ros2](https://github.com/linker-bot/linkerhand-telop-ros2). The legacy [linkerhand-ros-teleop](https://github.com/linker-bot/linkerhand-ros-teleop) repository documents ROS 1/ROS 2 glove retargeting; no equivalence is asserted.
+
+Legacy C++ interactive tools now live in [linkerbot-hand-tools](https://github.com/linker-bot/linkerbot-hand-tools). The legacy SDK CMake package is `linkerhand-legacy-cpp-sdk`, with target `LinkerHand::linkerhand_legacy_cpp_sdk`; update package lookups and explicit installation paths when adopting the renamed package.
 
 ## Check compatibility before switching
 

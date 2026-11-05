@@ -10,7 +10,9 @@
 - 旧版 Python 灵巧手应用：评估 [linkerbot-hand-python-sdk](https://github.com/linker-bot/linkerbot-hand-python-sdk)。
 - 使用综合包 `linkerbot-python-sdk` 的应用：根据实际使用的组件，分别评估[灵巧手](https://github.com/linker-bot/linkerbot-hand-python-sdk)、[机械臂](https://github.com/linker-bot/linkerbot-arm-python-sdk)和[通信库](https://github.com/linker-bot/linkerbot-transport)。
 - 旧版灵巧手 ROS 应用，包括专用型号驱动和 C++ 封装：评估 [linkerbot-hand-ros2-sdk](https://github.com/linker-bot/linkerbot-hand-ros2-sdk)。ROS 1 应用还需迁移至 ROS 2；基于 Python 的 ROS 2 驱动不能作为 C++ 库直接替换。
-- 旧版遥操作应用：评估 [linkerhand-telop-ros2](https://github.com/linker-bot/linkerhand-telop-ros2)。旧 `linkerhand-ros-teleop` 地址未能核实，不据此认定功能等价。
+- 旧版遥操作应用：评估 [linkerhand-telop-ros2](https://github.com/linker-bot/linkerhand-telop-ros2)。旧版 [linkerhand-ros-teleop](https://github.com/linker-bot/linkerhand-ros-teleop) 仓库提供 ROS 1/ROS 2 手套动作重定向说明，不据此认定功能等价。
+
+旧版 C++ 交互工具已迁移至 [linkerbot-hand-tools](https://github.com/linker-bot/linkerbot-hand-tools)。旧版 SDK 的 CMake 包名为 `linkerhand-legacy-cpp-sdk`，目标为 `LinkerHand::linkerhand_legacy_cpp_sdk`；采用更名后的包时，需更新包查找和显式安装路径。
 
 ## 切换前核对
 
