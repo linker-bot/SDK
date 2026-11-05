@@ -41,7 +41,7 @@ LinkerBot 灵巧手、机械臂的 SDK、通信库与遥操作工具入口。
 以下项目保留用于已有应用。新项目在硬件与功能受支持的前提下，应优先选择正在维护的项目。
 本目录未指定停止维护日期。下文提到的新项目仅作为迁移评估入口，不表示可以直接替换，也不保证覆盖旧型号。
 
-- [**linkerhand-cpp-sdk**](https://github.com/linker-bot/linkerhand-cpp-sdk) — 旧版预编译 C++ 灵巧手 SDK，包含公开头文件、预编译库、示例和工具。其 README 仍说明会为新 SDK 尚未覆盖的设备提供兼容维护。迁移至 `linkerbot-hand-cpp-sdk` 前需逐型号核对。
+- [**linkerbot-hand-legacy-cpp-sdk**](https://github.com/linker-bot/linkerbot-hand-legacy-cpp-sdk) — 旧版预编译 C++ 灵巧手 SDK，包含公开头文件、预编译库、示例和工具。其 README 仍说明会为新 SDK 尚未覆盖的设备提供兼容维护。迁移至 `linkerbot-hand-cpp-sdk` 前需逐型号核对。
 - [**linkerbot-python-sdk**](https://github.com/linker-bot/linkerbot-python-sdk) — 较早的 Python 综合 SDK，包含灵巧手和机械臂功能。新接入可评估拆分后的灵巧手 Python SDK、机械臂 Python SDK 与通信库。
 - [**linkerhand-python-sdk**](https://github.com/linker-bot/linkerhand-python-sdk) — 较早的 Python 灵巧手 SDK，提供 CAN/Modbus 配置与控制示例。可评估 `linkerbot-hand-python-sdk`，先确认设备与协议支持情况。
 - [**linkerhand-ros2-sdk**](https://github.com/linker-bot/linkerhand-ros2-sdk) — 较早的 ROS 2 灵巧手驱动，包含控制示例、GUI 工具与触觉可视化。可评估 `linkerbot-hand-ros2-sdk`，核对消息、启动配置和型号差异。

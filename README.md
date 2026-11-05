@@ -44,7 +44,7 @@ new development where the required hardware and features are supported. No end-o
 date is specified here. A listed successor is a starting point for evaluation, not a
 drop-in replacement or a guarantee of model coverage.
 
-- [**linkerhand-cpp-sdk**](https://github.com/linker-bot/linkerhand-cpp-sdk) — Legacy packaged C++ hand SDK with public headers, prebuilt libraries, examples, and tools. Its README still describes compatibility maintenance for devices outside the newer SDK's scope. Evaluate `linkerbot-hand-cpp-sdk` model by model before migrating.
+- [**linkerbot-hand-legacy-cpp-sdk**](https://github.com/linker-bot/linkerbot-hand-legacy-cpp-sdk) — Legacy packaged C++ hand SDK with public headers, prebuilt libraries, examples, and tools. Its README still describes compatibility maintenance for devices outside the newer SDK's scope. Evaluate `linkerbot-hand-cpp-sdk` model by model before migrating.
 - [**linkerbot-python-sdk**](https://github.com/linker-bot/linkerbot-python-sdk) — Earlier combined Python SDK with hand and arm functionality. Evaluate the separate Hand Python SDK, Arm Python SDK, and transport library for new integrations.
 - [**linkerhand-python-sdk**](https://github.com/linker-bot/linkerhand-python-sdk) — Earlier Python hand SDK with CAN/Modbus configuration and control examples. Evaluate `linkerbot-hand-python-sdk`; verify device and protocol support first.
 - [**linkerhand-ros2-sdk**](https://github.com/linker-bot/linkerhand-ros2-sdk) — Earlier ROS 2 hand driver with control examples, GUI tools, and tactile visualizations. Evaluate `linkerbot-hand-ros2-sdk` and check message, launch, and model differences.
